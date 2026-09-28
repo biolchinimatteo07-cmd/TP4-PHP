@@ -92,7 +92,7 @@ $erreurConnexion = isset($_GET['erreur']);
 
         afficherCitation();
         if (citations.length > 1) {
-            setInterval(citationSuivante, 15000);
+            setInterval(citationSuivante, 6000);
         }
     </script>
 </body>
