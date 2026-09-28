@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<style>
+  body { margin:0; background:#ffffff; font-family: Arial, sans-serif; }
+</style>
+</head>
+<body>
+<svg width="900" height="480" viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="480" fill="#ffffff"/>
+
+  <text x="450" y="40" text-anchor="middle" font-size="22" font-weight="bold" fill="#1c1730">Modélisation de la base de données — tp4_citations</text>
+
+  <!-- Table citations -->
+  <g transform="translate(80,90)">
+    <rect width="300" height="200" rx="6" fill="#f5f5f0" stroke="#1c1730" stroke-width="2"/>
+    <rect width="300" height="40" rx="6" fill="#1c1730"/>
+    <rect y="20" width="300" height="20" fill="#1c1730"/>
+    <text x="150" y="26" text-anchor="middle" font-size="18" font-weight="bold" fill="#e8e04e">citations</text>
+
+    <text x="14" y="65" font-size="14" fill="#1c1730">🔑 id_citation</text>
+    <text x="230" y="65" font-size="12" fill="#666">INT, PK, AI</text>
+
+    <text x="14" y="95" font-size="14" fill="#1c1730">auteur</text>
+    <text x="200" y="95" font-size="12" fill="#666">VARCHAR(150)</text>
+
+    <text x="14" y="125" font-size="14" fill="#1c1730">citation</text>
+    <text x="230" y="125" font-size="12" fill="#666">TEXT</text>
+
+    <text x="14" y="155" font-size="14" fill="#1c1730">date_ajout</text>
+    <text x="200" y="155" font-size="12" fill="#666">DATETIME</text>
+
+    <line x1="0" y1="40" x2="300" y2="40" stroke="#1c1730" stroke-width="1"/>
+  </g>
+
+  <!-- Table administrateurs -->
+  <g transform="translate(520,90)">
+    <rect width="300" height="160" rx="6" fill="#f5f5f0" stroke="#1c1730" stroke-width="2"/>
+    <rect width="300" height="40" rx="6" fill="#1c1730"/>
+    <rect y="20" width="300" height="20" fill="#1c1730"/>
+    <text x="150" y="26" text-anchor="middle" font-size="18" font-weight="bold" fill="#e8e04e">administrateurs</text>
+
+    <text x="14" y="65" font-size="14" fill="#1c1730">🔑 id_admin</text>
+    <text x="230" y="65" font-size="12" fill="#666">INT, PK, AI</text>
+
+    <text x="14" y="95" font-size="14" fill="#1c1730">identifiant</text>
+    <text x="200" y="95" font-size="12" fill="#666">VARCHAR(50), UNIQUE</text>
+
+    <text x="14" y="125" font-size="14" fill="#1c1730">mot_passe</text>
+    <text x="200" y="125" font-size="12" fill="#666">VARCHAR(255), hashé</text>
+
+    <line x1="0" y1="40" x2="300" y2="40" stroke="#1c1730" stroke-width="1"/>
+  </g>
+
+  <text x="450" y="350" text-anchor="middle" font-size="13" fill="#444">Tables indépendantes (pas de clé étrangère) — le rôle</text>
+  <text x="450" y="370" text-anchor="middle" font-size="13" fill="#444">visiteur / administrateur est géré par la session PHP après vérification</text>
+  <text x="450" y="390" text-anchor="middle" font-size="13" fill="#444">de l'identifiant / mot de passe dans "administrateurs".</text>
+
+  <text x="450" y="440" text-anchor="middle" font-size="12" fill="#888">Visiteurs : SELECT sur citations, INSERT sur citations (déposer une citation)</text>
+  <text x="450" y="458" text-anchor="middle" font-size="12" fill="#888">Administrateur : SELECT, INSERT, UPDATE, DELETE sur citations (C.R.U.D)</text>
+</svg>
+</body>
+</html>

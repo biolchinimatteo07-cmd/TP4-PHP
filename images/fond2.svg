@@ -1,0 +1,21 @@
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3a1420"/>
+      <stop offset="55%" stop-color="#6b1f2e"/>
+      <stop offset="100%" stop-color="#1a0a10"/>
+    </linearGradient>
+    <radialGradient id="glow2" cx="20%" cy="20%" r="55%">
+      <stop offset="0%" stop-color="#f8b16c" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#f8b16c" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots2" width="150" height="150" patternUnits="userSpaceOnUse" patternTransform="rotate(6)">
+      <text x="0" y="90" font-family="Georgia, serif" font-size="42" fill="#ffffff" opacity="0.05">&#8221;</text>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky2)"/>
+  <rect width="1600" height="900" fill="url(#glow2)"/>
+  <rect width="1600" height="900" fill="url(#dots2)"/>
+  <text x="1080" y="760" font-family="Georgia, serif" font-size="560" fill="#ffffff" opacity="0.06">&#8221;</text>
+  <polygon points="0,700 300,760 620,650 940,730 1260,640 1600,700 1600,900 0,900" fill="#150809" opacity="0.75"/>
+</svg>

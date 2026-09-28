@@ -1,0 +1,298 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: #f5f5f0;
+    background: #111;
+}
+
+/* ---------- Page d'accueil / carrousel ---------- */
+
+.carrousel {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.carrousel-fond {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1.2s ease-in-out;
+    z-index: 0;
+}
+
+.carrousel-fond::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.55) 100%);
+}
+
+.entete {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 24px 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.titre-site {
+    font-size: 1.8rem;
+    font-style: italic;
+    letter-spacing: 0.3px;
+    color: #e8e04e;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    margin: 0;
+}
+
+.encart-connexion {
+    background: rgba(20, 20, 20, 0.55);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 10px;
+    padding: 14px 18px;
+    min-width: 260px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+.encart-connexion label {
+    display: block;
+    font-size: 0.85rem;
+    margin: 6px 0 2px;
+}
+
+.encart-connexion input[type="text"],
+.encart-connexion input[type="password"] {
+    width: 100%;
+    padding: 6px 8px;
+    border-radius: 4px;
+    border: 1px solid #aaa;
+    font-family: inherit;
+}
+
+.encart-connexion button,
+.bouton {
+    margin-top: 10px;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 4px;
+    background: #e8e04e;
+    color: #1c1c1c;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.encart-connexion button:hover,
+.bouton:hover {
+    background: #fff3a0;
+    transform: translateY(-1px);
+}
+
+.erreur {
+    color: #ff8080;
+    font-size: 0.85rem;
+    margin-top: 8px;
+}
+
+.citation-zone {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px min(8vw, 120px);
+}
+
+.citation-zone::before {
+    content: "\201C";
+    position: absolute;
+    top: -30px;
+    left: min(8vw, 120px);
+    font-family: 'Georgia', serif;
+    font-size: 8rem;
+    color: #e8e04e;
+    opacity: 0.35;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.citation-texte {
+    position: relative;
+    font-size: clamp(1.4rem, 3vw, 2.4rem);
+    font-style: italic;
+    line-height: 1.45;
+    max-width: 900px;
+    letter-spacing: 0.2px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+    transition: opacity 0.8s ease-in-out;
+}
+
+.citation-auteur {
+    margin-top: 18px;
+    font-size: 1.1rem;
+    letter-spacing: 0.4px;
+    color: #e8e04e;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    transition: opacity 0.8s ease-in-out;
+}
+
+.pied-accueil {
+    position: relative;
+    z-index: 2;
+    padding: 24px 32px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.lien-bouton {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    background: rgba(232, 224, 78, 0.9);
+    color: #1c1c1c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.lien-bouton:hover { background: #fff3a0; transform: translateY(-1px); }
+
+.lien-bouton.secondaire {
+    background: rgba(255,255,255,0.15);
+    color: #f5f5f0;
+    border: 1px solid rgba(255,255,255,0.4);
+}
+
+.lien-bouton.secondaire:hover { background: rgba(255,255,255,0.3); }
+
+/* ---------- Pages formulaires (dépôt, connexion, admin) ---------- */
+
+.page-formulaire {
+    min-height: 100vh;
+    background: #1c1730;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.cadre {
+    background: #f5f5f0;
+    color: #222;
+    border-radius: 8px;
+    padding: 32px;
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+.cadre h1, .cadre h2 { margin-top: 0; font-family: 'Georgia', serif; }
+
+.cadre label {
+    display: block;
+    margin: 14px 0 4px;
+    font-weight: bold;
+}
+
+.cadre input[type="text"],
+.cadre input[type="password"],
+.cadre textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.cadre textarea { min-height: 140px; resize: vertical; }
+
+.cadre .bouton {
+    margin-top: 20px;
+    color: #1c1c1c;
+}
+
+.message-succes {
+    background: #e6f7e6;
+    border: 1px solid #8fd18f;
+    color: #205020;
+    padding: 10px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+.message-erreur {
+    background: #fbe6e6;
+    border: 1px solid #d18f8f;
+    color: #502020;
+    padding: 10px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+.retour {
+    display: inline-block;
+    margin-top: 18px;
+    color: #444;
+    text-decoration: none;
+}
+.retour:hover { text-decoration: underline; }
+
+/* ---------- Espace administrateur ---------- */
+
+.admin-barre {
+    background: #1c1730;
+    color: #f5f5f0;
+    padding: 14px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.admin-barre a { color: #e8e04e; text-decoration: none; }
+.admin-barre a:hover { text-decoration: underline; }
+
+.admin-contenu {
+    max-width: 960px;
+    margin: 32px auto;
+    padding: 0 20px;
+}
+
+table.citations {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    color: #222;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+table.citations th, table.citations td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    vertical-align: top;
+}
+
+table.citations th { background: #1c1730; color: #f5f5f0; }
+
+table.citations .actions a {
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+.lien-danger { color: #b02525; }
